@@ -71,7 +71,7 @@ def sumdata():
 
 GUI = Tk()
 GUI.geometry('600x700') # Size of GUI
-GUI.title('โปรแกรมของก้องเอง')
+GUI.title('โปรแกรมของก้องเอง v.0.0.1')
 
 file = PhotoImage(file='durian.png')
 IMG = Label(GUI, image=file, text='')
@@ -80,7 +80,7 @@ IMG.pack()
 L1 = Label(GUI, text='โปรแกรมคำนวณทุเรียน', font=('Angsana New', 30, 'bold'), fg='green')
 L1.pack() # .place(x,y) , .grid(row=0,column=0)
 
-L2 = Label(GUI, text='กรุณากรอกจำนวนทุเรียน', font=('Angsana New', 20))
+L2 = Label(GUI, text='กรุณากรอกจำนวนทุเรียน (กิโลกรัม)', font=('Angsana New', 20))
 L2.pack() # .place(x,y) , .grid(row=0,column=0)
 
 v_quantity = StringVar() #ตำแหน่งตัวแปรที่ใช้เก็บข้อมูลช่องกรอก
@@ -97,7 +97,6 @@ def Calculate(event=None):
     # stamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
  
     # --------------------------------------------------------------------------
-    # ย้ายไปทำเป็น function อยู่ด้านบนสุด ไว้บันทึกวันที่และยอดรวม
     # THAI DATE
     # stamp = datetime.now()
     # stamp = stamp.replace(year=stamp.year+543) # บวกเป็น พ.ศ.
@@ -144,6 +143,7 @@ def SummaryData(event):
 
 # สร้างคำสั่ง กดปุ่ม F1 เพื่อสรุปยอด
 GUI.bind('<F1>', SummaryData)
+GUI.bind('<F2>', SummaryData)
 
 E1.focus() # ให้ cursor ไปยังตำแหน่งของ E1
 GUI.mainloop()

@@ -1,0 +1,3 @@
+import myprofile
+
+myprofile.Hello()
